@@ -11,3 +11,4 @@ class dosen_matakuliah extends Model
     protected $fillable=['dosen_id','matakuliah_id'];
     protected $guarded=['id'];
 }
+ 	
