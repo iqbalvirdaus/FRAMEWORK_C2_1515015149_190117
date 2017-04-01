@@ -49,7 +49,7 @@
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="{{url('jadwal_matakuliah')}}">Jadwal Mahasiswa</a>
+								<a href="{{url('jadwalmatakuliah')}}">Jadwal Mahasiswa</a>
 							</li>
 						</ul>
 					</li>
@@ -62,7 +62,7 @@
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="{{url('dosen_matakuliah')}}">Jadwal Dosen Mengajar</a>
+								<a href="{{url('dosenmatakuliah')}}">Jadwal Dosen Mengajar</a>
 							</li>
 						</ul>
 					</li>

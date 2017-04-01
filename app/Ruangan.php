@@ -11,4 +11,9 @@ class Ruangan extends Model
     protected $fillable=['title'];
     protected $guarded=['id'];
 
+   	public function JadwalMatakuliah()
+   	{
+   		# code...
+		return $this->hasMany(JadwalMatakuliah::class,'ruangan_id');   		
+   	}
 }

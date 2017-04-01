@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Dosen;
+use App\Pengguna;
 
 class DosenController extends Controller
 {
@@ -21,12 +22,13 @@ class DosenController extends Controller
 	}
 	public function simpan(Request $input){
 		$dosen= new dosen();
-		$dosen->username=$input->username;
-		$dosen->password=$input->password;
+		$dosen->nama=$input->nama;
+		$dosen->nip=$input->nip;
+		$dosen->alamat=$input->alamat;
 		$informasi = $dosen->save() ? 'Berhasil simpan data' :'Gagal simpan data';
 		return redirect('dosen')->with(['informasi'=>$informasi]);
 		//$dosen->save();
-		//return "data dengan username {$dosen->username} telah disimpan";
+		//return "data dengan nama {$dosen->nama} telah disimpan";
 	}
 	public function edit($id){
 		$dosen=dosen::find($id);
