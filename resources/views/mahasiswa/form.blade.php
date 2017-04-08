@@ -13,13 +13,19 @@
 <div class="form-group">
 	<label class="col-sm-2 control-label">Alamat</label>
 	<div class="col-sm-10">
-		{!! Form::text('alamat',null,['class'=>'form-control','placeholder'=>"alamat"]) !!}
+		{!! Form::textarea('alamat',null,['class'=>'form-control','placeholder'=>"alamat"]) !!}
 	</div>
 </div>
 <div class="form-group">
-	<label class="col-sm-2 control-label">Id. Pengguna</label>
+	<label class="col-sm-2 control-label">Username</label>
 	<div class="col-sm-10">
-		{!! Form::text('pengguna_id',null,['class'=>'form-control','placeholder'=>"id pengguna"]) !!}
+		{!! Form::text('username',null,['class'=>'form-control','placeholder'=>"Username"]) !!}
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Password</label>
+	<div class="col-sm-10">
+		{!! Form::text('password',null,['class'=>'form-control','placeholder'=>"Password"]) !!}
 	</div>
 </div>
  

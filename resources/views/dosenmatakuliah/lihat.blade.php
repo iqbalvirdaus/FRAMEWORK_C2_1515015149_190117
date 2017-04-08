@@ -2,30 +2,36 @@
 @section('container')
 <div class="panel panel-warning"> 
 	<div class="panel-heading">
-		<strong><a href="{{url('pengguna')}}">
-			<i style="color:#8a6d3b" class="fa text-default fa-chevron-left"></i></a>Detail Pengguna
+		<strong><a href="{{url('dosenmatakuliah')}}">
+			<i style="color:#8a6d3b" class="fa text-default fa-chevron-left"></i></a>Detail Dosen Mengajar
 		</strong>
-	</div>
+	</div> 
 	<table class="table">
 		<tr>
-			<td>Username</td>
+			<td>Dosen</td>
 			<td>:</td>
-			<td>{{ $pengguna->username }}</td>
+			<td>{{ $dosenmatakuliah->dosen->nip }}</td>
 		</tr>
 		<tr>
-			<td>Password</td>
+			<td>Dosen</td>
 			<td>:</td>
-			<td>{{ $pengguna->password }}</td>
+			<td>{{ $dosenmatakuliah->dosen->nama }}</td>
 		</tr>
+		<tr>
+			<td>Mahasiswa</td>
+			<td>:</td>
+			<td>{{ $dosenmatakuliah->matakuliah->title }}</td>
+		</tr>
+
 		<tr>
 			<td class="col-xs-4">Dibuat Tanggal</td>
 			<td class="col-xs-4">:</td>
-			<td class="col-xs-4">{{$pengguna->created_at}}</td>
+			<td class="col-xs-4">{{$dosenmatakuliah->created_at}}</td>
 		</tr>
 		<tr>
 			<td class="col-xs-4">Diperbarui Tanggal</td>
 			<td class="col-xs-4">:</td>
-			<td class="col-xs-4">{{$pengguna->updated_at}}</td>
+			<td class="col-xs-4">{{$dosenmatakuliah->updated_at}}</td>
 		</tr>
 		
 	</table>

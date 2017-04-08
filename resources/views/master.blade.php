@@ -5,6 +5,8 @@
 	<title>@yield('page_title', 'Halaman Awal') | Laboratorium FW</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('component/bootstrap/dist/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('component/font-awesome/css/font-awesome.min.css')}}">
+	<link rel="icon" href="{!! asset('images/UNMUL.jpg') !!}"/>
+
 	<style type="text/css">
 		body{
 			padding-top: 70px;

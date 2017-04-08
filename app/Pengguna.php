@@ -17,9 +17,6 @@ class Pengguna extends Model
     public function mahasiswa(){
     	return $this->hasOne(Mahasiswa::class,'pengguna_id');
     }
-    /*public function mahasiswa(){
-        return $this->hasOne('App\Mahasiswa','pengguna_id');
-    }*/
     
     public function dosen()
     {

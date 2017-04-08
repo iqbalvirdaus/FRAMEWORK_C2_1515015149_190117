@@ -2,9 +2,9 @@
 @section('container')
 <div class="panel panel-default">
 	<div class="panel-default">
-			<strong> SELURUH DATA mahasiswa </strong>
-			<a href="{{url('mahasiswa/tambah')}}" class="btn btn-xs btn-primary pull-right"> <i class="clearfix">mahasiswa</i> </a>
-		<div class="clearfix"></div>
+			<strong> SELURUH DATA MAHASISWA </strong>
+			<a href="{{url('mahasiswa/tambah')}}" class="btn btn-xs btn-primary pull-right"> <i class="fa fa-plus">Mahasiswa</i> </a>
+
 	</div>
 	<table class="table">
 			<thead>
@@ -18,7 +18,7 @@
 			</thead>
 			<tbody>
 				<?php $x=1; ?>
-				@foreach ($data as $mahasiswa)
+				@foreach ($semuaMahasiswa as $mahasiswa)
 					<tr>
 						<td> {{$x++}}</td>
 						<td> {{$mahasiswa->nama or 'Nama kosong'}}</td>

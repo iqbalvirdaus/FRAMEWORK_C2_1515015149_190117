@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\DosenMatakuliah;
+//use App\DosenMatakuliah;
 class matakuliah extends Model
 {
     //
@@ -19,3 +19,4 @@ class matakuliah extends Model
 
  
 }
+ 

@@ -10,20 +10,26 @@
 			<thead>
 					<tr>
 						<th>No.</th>
-						<th>ID. Mahasiswa</th>
-						<th>ID. Ruangan</th>
-						<th>ID. Dosen Matakuliah</th>
+						<th>Nama Mahasiswa</th>
+						<th>NIM Mahasiswa</th>
+						<th>Nama Matakuliah</th>
+						<th>Nama Dosen</th>
+						<th>Ruangan</th>
 						<th>Aksi</th> 
 					</tr>
 			</thead>
 			<tbody>
 				<?php $x=1; ?>
-				@foreach ($data as $jadwalmatakuliah)
+				@foreach ($semuaJadwalMatakuliah as $jadwalmatakuliah)
 					<tr>
 						<td> {{$x++}}</td>
-						<td> {{$jadwalmatakuliah->mahasiswa_id or 'mahasiswa kosong'}}</td>
-						<td> {{$jadwalmatakuliah->ruangan_id or 'ruangan kosong'}}</td>
-						<td> {{$jadwalmatakuliah->dosen_matakuliah_id or 'dosen matakuliah kosong'}}</td>
+						<td> {{$jadwalmatakuliah->mahasiswa->nama or 'nama kosong'}}</td>
+						<td> {{$jadwalmatakuliah->mahasiswa->nim or 'nim kosong'}}</td>
+						<td> {{$jadwalmatakuliah->dosenmatakuliah->matakuliah->title or ' matakuliah kosong'}}</td>
+						<td> {{$jadwalmatakuliah->dosenmatakuliah->dosen->nama or 'nama dosen matakuliah kosong'}}</td>
+						<td> {{$jadwalmatakuliah->ruangan->title or 'ruangan kosong'}}</td>
+
+
 						<td>
 							<div class="btn-group" role="group"></div>
 							<a href="{{url('jadwalmatakuliah/edit/'.$jadwalmatakuliah->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="ubah">

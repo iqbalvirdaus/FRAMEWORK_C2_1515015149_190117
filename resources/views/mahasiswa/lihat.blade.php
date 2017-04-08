@@ -8,14 +8,30 @@
 	</div>
 	<table class="table">
 		<tr>
+			<td>Nama</td>
+			<td>:</td>
+			<td>{{ $mahasiswa->nama }}</td>
+		</tr>
+		<tr>
+			<td>NIM</td>
+			<td>:</td>
+			<td>{{ $mahasiswa->nim }}</td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td>:</td>
+			<td>{{ $mahasiswa->alamat }}</td>
+		</tr>
+
+		<tr>
 			<td>Username</td>
 			<td>:</td>
-			<td>{{ $mahasiswa->username }}</td>
+			<td>{{ $mahasiswa->pengguna->username }}</td>
 		</tr>
 		<tr>
 			<td>Password</td>
 			<td>:</td>
-			<td>{{ $mahasiswa->password }}</td>
+			<td>{{ $mahasiswa->pengguna->password }}</td>
 		</tr>
 		<tr>
 			<td class="col-xs-4">Dibuat Tanggal</td>
