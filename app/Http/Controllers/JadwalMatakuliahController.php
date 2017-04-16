@@ -12,6 +12,7 @@ use App\ruangan;
 class JadwalMatakuliahController extends Controller
 {
     //
+
    protected $informasi = 'gagal melakukan aksi';
    public function awal()
    {

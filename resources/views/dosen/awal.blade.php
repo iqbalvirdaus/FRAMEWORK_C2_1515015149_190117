@@ -1,6 +1,6 @@
 @extends('master')
 @section('container') 
-<div class="panel panel-default">
+<div class="panel panel-default"> 
 	<div class="panel-default">
 			<strong> SELURUH DATA DOSEN </strong>
 			<a href="{{url('dosen/tambah')}}" class="btn btn-xs btn-primary pull-right"> <i class="fa fa-plus" >dosen</i> </a>

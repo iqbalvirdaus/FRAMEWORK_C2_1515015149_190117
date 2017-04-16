@@ -47,6 +47,7 @@ class DosenController extends Controller
 		$dosen = dosen::find($id);
 		return view('dosen.edit')->with(array('dosen' => $dosen ));
 	}
+
 	public function lihat($id)
 	{
 		# code...
@@ -58,9 +59,9 @@ class DosenController extends Controller
 		# code...
 		$dosen = dosen::find($id);
 		$pengguna = $dosen->pengguna;
-		$dosen->nama=$input->nama;
-		$dosen->nip=$input->nip;
-		$dosen->alamat=$input->alamat;
+		$dosen->nama = $input->nama;
+		$dosen->nip = $input->nip;
+		$dosen->alamat = $input->alamat;
 		$dosen->save();
 		if (!is_null($input->username)) {
 			# code...

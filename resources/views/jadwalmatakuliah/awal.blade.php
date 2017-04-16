@@ -25,7 +25,7 @@
 						<td> {{$x++}}</td>
 						<td> {{$jadwalmatakuliah->mahasiswa->nama or 'nama kosong'}}</td>
 						<td> {{$jadwalmatakuliah->mahasiswa->nim or 'nim kosong'}}</td>
-						<td> {{$jadwalmatakuliah->dosenmatakuliah->matakuliah->title or ' matakuliah kosong'}}</td>
+						<td> {{	$jadwalmatakuliah->dosenmatakuliah->matakuliah->title or ' matakuliah kosong'}}</td>
 						<td> {{$jadwalmatakuliah->dosenmatakuliah->dosen->nama or 'nama dosen matakuliah kosong'}}</td>
 						<td> {{$jadwalmatakuliah->ruangan->title or 'ruangan kosong'}}</td>
 

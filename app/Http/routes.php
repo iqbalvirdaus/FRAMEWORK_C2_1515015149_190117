@@ -10,6 +10,34 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+/*routing RelationshipRebornController*/
+Route::get('ujiHas','RelationshipRebornController@ujiHas');
+Route::get('ujiDoesntHave','RelationshipRebornController@ujiDoesntHave');
+Route::get('likeS',
+		function ()
+		{
+			# code...
+			return	\App\DosenMatakuliah::whereHas('dosen',function($query){
+						$query->where('nama','like','%s%');
+
+					})->with('dosen')->groupBy('dosen_id')->get();
+		}
+	);
+Route::get('likeSs',
+		function ()
+		{
+			# code...
+			return	\App\DosenMatakuliah::whereHas('dosen',function($query){
+						$query->where('nama','like','%s%');
+				})->orWhereHas('matakuliah',function ($kuery)
+				{
+					# code...
+				
+					$kuery->where('title','like','%a%');
+				})->with('dosen','matakuliah')->groupBy('dosen_id')->get();
+		}
+	);
+
 /*routing table pengguna*/
 Route::get('pengguna','PenggunaController@awal');
 Route::get('pengguna/tambah','PenggunaController@tambah');
