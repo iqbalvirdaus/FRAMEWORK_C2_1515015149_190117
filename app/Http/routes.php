@@ -10,6 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Http\Request;
+
 /*routing RelationshipRebornController*/
 Route::get('ujiHas','RelationshipRebornController@ujiHas');
 Route::get('ujiDoesntHave','RelationshipRebornController@ujiDoesntHave');
@@ -118,9 +120,23 @@ Route::get('/public', function () {
     return ('Nama saya Iqbal Virdaus Septian Siregar');
 });*/
 
-Route::get('/', function () {
-    return view('master');
+
+Route::post('/', function (Request $request) {
+    //return view('master');
+    echo "Hasil dari Input tadi nama : ".$request->nama;
 });
+
+Route::get('/', function () {
+    echo Form::open(['url'=>'/']),
+    	 Form::label('nama'),
+    	 Form::text('nama',null),
+    	 Form::submit('kirim'),
+    	 Form::close();
+});
+/*Route::get('/', function (Illuminate\Http\Request $request) {
+    //return view('master');
+    echo "ini adalah request dari method get ".$request->nama;
+});*/
 
 
 

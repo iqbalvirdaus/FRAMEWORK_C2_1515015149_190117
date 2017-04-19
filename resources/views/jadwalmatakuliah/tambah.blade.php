@@ -9,6 +9,7 @@
 				Tambah Data Jadwal Matakuliah
 			</strong>
 		</div>
+		{{csrf_field()}}
 		{!! Form::open([ 'url'=>'jadwalmatakuliah/simpan','class'=>'form-horizontal']) !!}
 		@include('jadwalmatakuliah.form')
 		<div style="width: 100%; text-align: right; ">

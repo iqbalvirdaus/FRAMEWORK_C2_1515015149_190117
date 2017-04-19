@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\DosenMatakuliahRequest;
 use App\dosenmatakuliah;
 use App\dosen;
 use App\Matakuliah;
@@ -27,7 +28,7 @@ class dosenmatakuliahController extends Controller
 		return view('dosenmatakuliah.tambah',compact('dosen','matakuliah'));
 		return $this->simpan();
 	}
-	public function simpan(Request $input)
+	public function simpan(DosenMatakuliahRequest $input)
 	{
 		# code...
 		$dosenmatakuliah= new dosenmatakuliah($input->only('dosen_id','matakuliah_id'));
@@ -54,7 +55,7 @@ class dosenmatakuliahController extends Controller
 		$dosenmatakuliah = dosenmatakuliah::find($id);
 		return view('dosenmatakuliah.lihat')->with(array('dosenmatakuliah' => $dosenmatakuliah ));	
 	}
-	public function update($id, Request $input)
+	public function update($id,DosenMatakuliahRequest $input)
 	{
 		# code...
 		$dosenmatakuliah= dosenmatakuliah::find($id);

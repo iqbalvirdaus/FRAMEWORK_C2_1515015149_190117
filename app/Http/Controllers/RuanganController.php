@@ -1,10 +1,11 @@
 <?php
 /*File DosenController.php*/
 namespace App\Http\Controllers;
-
+ 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\RuanganRequest;
 use App\ruangan;
 
 class RuanganController extends Controller
@@ -19,7 +20,7 @@ class RuanganController extends Controller
 		//return $this->simpan();
 		return view('ruangan.tambah');
 	}
-	public function simpan(Request $input){
+	public function simpan(RuanganRequest $input){
 		$ruangan= new ruangan();
 		$ruangan->title = $input->title;
 		$informasi = $ruangan->save()?'Berhasil simpan data' :'Gagal simpan data';
@@ -35,7 +36,7 @@ class RuanganController extends Controller
 		$ruangan=ruangan::find($id);
 		return view('ruangan.lihat')->with(array('ruangan' => $ruangan ));	
 	}
-	public function update($id,Request $input){
+	public function update($id,RuanganRequest $input){
 		$ruangan= ruangan::find($id);
 		$ruangan->title=$input->title;
 		$informasi = $ruangan->save()?'Berhasil update data' :'Gagal update data';

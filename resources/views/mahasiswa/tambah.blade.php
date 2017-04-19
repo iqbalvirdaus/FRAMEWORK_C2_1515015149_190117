@@ -9,6 +9,7 @@
 				Tambah Data Mahasiswa
 			</strong>
 		</div>
+		{{csrf_field()}}
 		{!! Form::open(['url'=>'mahasiswa/simpan','class'=>'form-horizontal']) !!}
 		@include('mahasiswa.form')
 		<div style="width: 100%; text-align: right; ">

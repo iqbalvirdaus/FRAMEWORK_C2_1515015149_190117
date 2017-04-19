@@ -9,6 +9,7 @@
 				Kembali ke Ruangan
 			</strong>
 		</div>
+		{{csrf_field()}}
 		{!! Form::open(['url'=>'ruangan/simpan','class'=>'form-horizontal']) !!}
 		@include('ruangan.form')
 		<div style="width: 100%; text-align: right; ">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\JadwalMatakuliahRequest; 
 use App\JadwalMatakuliah;
 use App\mahasiswa;
 use App\dosenmatakuliah;
@@ -30,7 +31,7 @@ class JadwalMatakuliahController extends Controller
 		$dosenmatakuliah = new dosenmatakuliah;
 		return view('jadwalmatakuliah.tambah',compact('mahasiswa','ruangan','dosenmatakuliah'));
 	}
-	public function simpan(Request $input)
+	public function simpan(JadwalMatakuliahRequest $input)
 	{
 		# code...
 		$jadwalmatakuliah= new JadwalMatakuliah($input->only('ruangan_id','dosen_matakuliah_id','mahasiswa_id'));
@@ -56,7 +57,7 @@ class JadwalMatakuliahController extends Controller
 		$jadwalmatakuliah = JadwalMatakuliah::find($id);
 		return view('jadwalmatakuliah.lihat',compact('jadwalmatakuliah'));	
 	}
-	public function update($id, Request $input)
+	public function update($id,JadwalMatakuliahRequest $input)
 	{
 		# code...
 		$jadwalmatakuliah = jadwalmatakuliah::find($id);

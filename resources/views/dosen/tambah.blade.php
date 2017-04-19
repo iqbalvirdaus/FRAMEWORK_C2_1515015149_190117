@@ -9,6 +9,7 @@
 				Tambah Data dosen
 			</strong>
 		</div>
+		{{csrf_field()}}
 		{!! Form::open(['url'=>'dosen/simpan','class'=>'form-horizontal']) !!}
 		@include('dosen.form')
 		<div style="width: 100%; text-align: right; ">

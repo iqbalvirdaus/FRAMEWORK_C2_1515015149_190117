@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\mahasiswarequest;
 use App\Mahasiswa;
 use App\Pengguna;
 
@@ -19,11 +20,11 @@ class MahasiswaController extends Controller
 
 	public function tambah()
 	{
-		# code...
+		# code... 
 		return view('mahasiswa.tambah');
 	}
 
-	public function simpan(Request $input)
+	public function simpan(MahasiswaRequest $input)
 	{
 		# code...
 		$pengguna = new Pengguna($input->only('username','password'));
@@ -51,7 +52,7 @@ class MahasiswaController extends Controller
 		$mahasiswa = mahasiswa::find($id);
 		return view('mahasiswa.lihat')->with(array('mahasiswa' => $mahasiswa ));	
 	}
-	public function update($id, Request $input)
+	public function update($id, MahasiswaRequest $input)
 	{
 		# code...
 		$mahasiswa = mahasiswa::find($id);

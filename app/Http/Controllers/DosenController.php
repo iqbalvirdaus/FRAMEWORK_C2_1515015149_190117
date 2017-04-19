@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\DosenRequest;
 use App\Dosen; 
 use App\Pengguna;
 
@@ -25,7 +26,7 @@ class DosenController extends Controller
 		return view('dosen.tambah');
 	}
 
-	public function simpan(Request $input)
+	public function simpan(DosenRequest $input)
 	{
 		# code...
 		$pengguna = new Pengguna($input->only('username','password'));
@@ -54,7 +55,7 @@ class DosenController extends Controller
 		$dosen = dosen::find($id);
 		return view('dosen.lihat')->with(array('dosen' => $dosen ));	
 	}
-	public function update($id, Request $input)
+	public function update($id, DosenRequest $input)
 	{
 		# code...
 		$dosen = dosen::find($id);

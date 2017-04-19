@@ -20,6 +20,12 @@ class PenggunaController extends Controller
 		return view('pengguna.tambah');
 	}
 	public function simpan(Request $input){
+
+		$this->validate($input,[
+			'username'=>'required',
+			'password'=>'required',
+		]);
+
 		$pengguna= new Pengguna();
 		$pengguna->username=$input->username;
 		$pengguna->password=$input->password;
@@ -48,5 +54,6 @@ class PenggunaController extends Controller
 		$informasi = $pengguna->delete()?'Berhasil hapus data' :'Gagal hapus data';
 		return redirect('pengguna')->with(['informasi'=>$informasi]);
 	}
+	
 
 }

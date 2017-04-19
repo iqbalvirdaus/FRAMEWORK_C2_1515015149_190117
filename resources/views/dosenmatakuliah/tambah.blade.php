@@ -9,6 +9,7 @@
 				Tambah Data Dosen Matakuliah
 			</strong>
 		</div>
+		{{csrf_field()}}
 		{!! Form::open([ 'url'=>'dosenmatakuliah/simpan','class'=>'form-horizontal']) !!}
 		@include('dosenmatakuliah.form')
 		<div style="width: 100%; text-align: right; ">
