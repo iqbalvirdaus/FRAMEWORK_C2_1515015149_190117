@@ -11,6 +11,14 @@
 |
 */
 use Illuminate\Http\Request;
+/*login*/
+Route::get('/login','SesiController@form');
+Route::post('/login','SesiController@validasi');
+Route::get('/logout','SesiController@logout');
+Route::post('/','SesiController@index');
+
+
+
 
 /*routing RelationshipRebornController*/
 Route::get('ujiHas','RelationshipRebornController@ujiHas');
@@ -39,8 +47,9 @@ Route::get('likeSs',
 				})->with('dosen','matakuliah')->groupBy('dosen_id')->get();
 		}
 	);
+Route::group(['middleware'=>'AuthentifikasiUser'],function(){
 
-/*routing table pengguna*/
+	/*routing table pengguna*/
 Route::get('pengguna','PenggunaController@awal');
 Route::get('pengguna/tambah','PenggunaController@tambah');
 Route::get('pengguna/lihat/{pengguna}','PenggunaController@lihat');
@@ -104,6 +113,16 @@ Route::get('mahasiswa/edit/{mahasiswa}','mahasiswaController@edit');
 Route::post('mahasiswa/edit/{mahasiswa}','mahasiswaController@update');
 Route::get('mahasiswa/hapus/{mahasiswa}','mahasiswaController@hapus');
 
+});
+
+
+
+
+Route::get('/', function () {
+    return view('master');
+  /*  echo "Hasil dari Input tadi nama : ".$request->nama;*/
+});
+
 
 /*Route::get('pengguna/tambah','PenggunaController@tambah');
 Route::get('pengguna','PenggunaController@awal');*/
@@ -121,18 +140,19 @@ Route::get('/public', function () {
 });*/
 
 
-Route::post('/', function (Request $request) {
+
+/*Route::post('/', function (Request $request) {
     //return view('master');
     echo "Hasil dari Input tadi nama : ".$request->nama;
-});
-
+});*/
+/*
 Route::get('/', function () {
     echo Form::open(['url'=>'/']),
     	 Form::label('nama'),
     	 Form::text('nama',null),
     	 Form::submit('kirim'),
     	 Form::close();
-});
+});*/
 /*Route::get('/', function (Illuminate\Http\Request $request) {
     //return view('master');
     echo "ini adalah request dari method get ".$request->nama;
@@ -142,3 +162,7 @@ Route::get('/', function () {
 
 
 
+
+/*Route::auth();
+
+Route::get('/home', 'HomeController@index');*/

@@ -29,6 +29,7 @@
 	</style>
 </head>
 <body>
+	
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -83,11 +84,57 @@
 								<a href="{{url('matakuliah')}}">Matakuliah</a>
 							</li>
 						</ul>
+					</li>
+					<li class="divider"> 
+						<a href="{{url('logout')}}"> Logout</a>
 					</li>					
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<!-- <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+					
+					<span class="sr-only">Toggle navigation </span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="{{url('/')}}" class="navbar-brand"> Laravel-5</a>
+				
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<a href="{{url('/login')}}" class="navbar-brand"><i class="fa fa-clock"> </i> LOGIN</a>
+				
+			</div>
+	
+		</div>
+	
+		 </nav>
+	
+	<div id="navbar" class="collapse navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li class="dropdown active">
+				<a href="#" data-toggle="dropdown" role="button" aria-haspopup = "true" aria-expanded="false"> Mahsiswa
+				<span class="caret"></span> </a>
+		
+			</li>
+			
+		</ul>
+		<ul class="dropdown-menu" aria-labelledby="dlabel">
+		<li>
+			<a href="{{url('mahasiswa')}}"></a>
+		</li>
+			
+		</ul>
+		
+	
+	</div>
+	
+	</nav> -->
 	<div class="clearfix"></div>
 	<div class="container">
 		@if(Session::has('informasi'))
